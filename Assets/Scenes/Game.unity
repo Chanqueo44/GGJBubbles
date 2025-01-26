@@ -2378,7 +2378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 192332081}
   SFXSource: {fileID: 725137687}
-  background: {fileID: 8300000, guid: 41f775d38611bf74d96e3b7018f53cee, type: 3}
+  background: {fileID: 8300000, guid: a0d5c74f01c4d974f86a92a870219bdb, type: 3}
+  hard: {fileID: 8300000, guid: 6b373f88c7affe64fb0f893a0b88e127, type: 3}
   death: {fileID: 8300000, guid: 3738702bd0b154d069ea0ee9d38d0a9c, type: 3}
   hit: {fileID: 8300000, guid: ad67020b39ecf41c4b6b1c8d2280331c, type: 3}
   recover: {fileID: 8300000, guid: 37012c42de7893c408b20266e35d76ef, type: 3}

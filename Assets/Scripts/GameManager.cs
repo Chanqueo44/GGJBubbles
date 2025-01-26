@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     }else{
       if(playerCurrentLives==1){
         audioManager.PlaySFX(audioManager.scream); 
+        audioManager.PlayMusic(audioManager.hard);
       }
       hearts[playerCurrentLives].SetActive(false);
       audioManager.PlaySFX(audioManager.hit);
@@ -47,7 +48,10 @@ public class GameManager : MonoBehaviour
     if(playerCurrentLives<3){
       playerCurrentLives++;
       hearts[playerCurrentLives-1].SetActive(true);
-       audioManager.PlaySFX(audioManager.recover);
+      audioManager.PlaySFX(audioManager.recover);
+      if(playerCurrentLives==2){
+        audioManager.PlayMusic(audioManager.background); 
+      }
     }
     
   }

@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     [Header("----------Audio Clips------------")]
     
     public AudioClip background;
+    public AudioClip hard;
     public AudioClip death;
     public AudioClip hit;
     public AudioClip recover;

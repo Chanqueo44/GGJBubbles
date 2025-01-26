@@ -15,4 +15,8 @@ using UnityEngine.SceneManagement;
             Application.Quit();
         }
 
+        public void Credits(){
+            SceneManager.LoadScene("Credits");
+        }
+
     }
