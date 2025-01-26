@@ -16,7 +16,6 @@ public class ObjectHitChecker : MonoBehaviour
     if (collider.gameObject.CompareTag("RepairKit"))
     {
       gm.Recover();
-      Debug.Log("RepairKit hitted");
     }
   }
 }

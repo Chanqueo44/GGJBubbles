@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
   public static GameManager Instance { get; private set; }
 
   [SerializeField] GameObject[] hearts;
+  
+  [SerializeField] AudioManager audioManager;
   public int playerScore = 0;
   public int playerCurrentLives = 3;
 
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
       SceneManager.LoadScene("GameOver");
     }else{
       hearts[playerCurrentLives].SetActive(false);
+      audioManager.PlaySFX(audioManager.hit);
     }
   }
 
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
     if(playerCurrentLives<3){
       playerCurrentLives++;
       hearts[playerCurrentLives-1].SetActive(true);
+       audioManager.PlaySFX(audioManager.recover);
     }
     
   }
