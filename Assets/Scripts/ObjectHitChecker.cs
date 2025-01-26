@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ObjectHitChecker : MonoBehaviour
-{
-  private void OnCollisionEnter2D(Collision2D collision)
+{ 
+  [SerializeField] GameManager gm;
+  private void OnTriggerEnter2D(Collider2D collider)
   {
-    if (collision.gameObject.CompareTag("Bubble"))
+    if (collider.gameObject.CompareTag("Bubble"))
     {
-      GameManager.Instance.playerCurrentLives--;
-      Debug.Log("Bubble hitted");
+      gm.Hit();
     }
 
-    if (collision.gameObject.CompareTag("RepairKit"))
+    if (collider.gameObject.CompareTag("RepairKit"))
     {
-      if (GameManager.Instance.playerCurrentLives < GameManager.Instance.playerMaxLives) 
-        GameManager.Instance.playerCurrentLives++;
+      gm.Recover();
       Debug.Log("RepairKit hitted");
     }
   }

@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
   [SerializeField] GameObject[] hearts;
   public int playerScore = 0;
-  public int playerMaxLives = 3;
   public int playerCurrentLives = 3;
 
   private void Update()
