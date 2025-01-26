@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
         public void PlayGame()
         {
             SceneManager.LoadScene("Game");
-            Debug.Log("wtf");
         }
 
         public void QuitGame()

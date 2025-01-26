@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     movement = new Vector2(horizontalInput * moveSpeed, 0f);
+    
   }
 
   void FixedUpdate()

@@ -32,8 +32,12 @@ public class GameManager : MonoBehaviour
   public void Hit(){
     playerCurrentLives--;
     if(playerCurrentLives==0){
-      SceneManager.LoadScene("GameOver");
+      hearts[playerCurrentLives].SetActive(false);
+       StartCoroutine(Death(3));
     }else{
+      if(playerCurrentLives==1){
+        audioManager.PlaySFX(audioManager.scream); 
+      }
       hearts[playerCurrentLives].SetActive(false);
       audioManager.PlaySFX(audioManager.hit);
     }
@@ -47,5 +51,18 @@ public class GameManager : MonoBehaviour
     }
     
   }
+
+  IEnumerator Death(float duration)
+    {
+        Time.timeScale = 0; // Freeze everything except audio
+        audioManager.PlaySFX(audioManager.scream);
+        audioManager.PlayMusic(audioManager.death);
+        
+        yield return new WaitForSecondsRealtime(duration); // Wait in real time
+
+        Time.timeScale = 1; // Unfreeze the game
+
+        SceneManager.LoadScene("GameOver");
+    }
   
 }

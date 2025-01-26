@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour {
     public AudioClip hit;
     public AudioClip recover;
 
+    public AudioClip scream;
+
 
     private void Start(){
         musicSource.clip=background;
